@@ -5,24 +5,6 @@ import java.util.Stack;
 
 public class DFS {
 
-    public static <T> Optional<Arbol<T>> busqueda(T contnido, Arbol<T> raiz) {
-        Stack<Arbol<T>> cola = new Stack<>();
-        cola.add(raiz);
-
-        Arbol<T> nodoActual;
-        while (!cola.isEmpty()) {
-            nodoActual = cola.pop();
-            System.out.println("Nodo visitado: " + nodoActual.getValue());
-
-            if (nodoActual.getValue().equals(contnido))
-                return Optional.of(nodoActual);
-            else
-                cola.addAll(nodoActual.getChildren());
-        }
-
-        return Optional.empty();
-    }
-
     public static <T> Optional<Nodo<T>> busqueda(T contenido, Nodo<T> origen) {
         Stack<Nodo<T>> pila = new Stack<>();
         pila.add(origen);
